@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #080808;
+    --bg-secondary: #0e0e0e;
+    --bg-surface: #141414;
+    --bg-surface-elevated: #1a1a1a;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.14);
+    --gold: #C5A059;
+    --gold-muted: #8a703d;
+    --gold-faint: rgba(197, 160, 89, 0.12);
+    --crimson: #991B1B;
+    --crimson-glow: rgba(153, 27, 27, 0.35);
+    --crimson-faint: rgba(153, 27, 27, 0.15);
+    --text-primary: #F4F4F0;
+    --text-secondary: #A0A09C;
+    --text-muted: #666663;
+  }
+
+  ::selection {
+    background: #991B1B;
+    color: #F4F4F0;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Atmospheric subtle architectural grid & fine lines */
+.bg-command-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-radial-faint-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(153, 27, 27, 0.07) 0%, transparent 65%),
+              radial-gradient(circle at 100% 30%, rgba(197, 160, 89, 0.04) 0%, transparent 50%);
+}
+
+.font-serif-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'Space Mono', monospace;
+}
+
+.font-sans-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.mono, .meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Architectural Panel with Metallic Gold edge highlight on hover */
+.system-panel {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.system-panel:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.7), 0 0 15px -3px rgba(153, 27, 27, 0.15);
+}
+
+/* Editorial Button with gold/crimson micro-interaction */
+.btn-editorial {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: all 0.2s ease;
+  background: #0d0d0d;
+  color: #F4F4F0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-editorial:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: #151515;
+  box-shadow: 0 0 12px -2px rgba(197, 160, 89, 0.25);
+}
+
+.btn-crimson {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  border: 1px solid rgba(153, 27, 27, 0.5);
+  padding: 0.6rem 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: all 0.2s ease;
+  background: #180808;
+  color: #fca5a5;
+  cursor: pointer;
+}
+
+.btn-crimson:hover {
+  border-color: #ef4444;
+  background: #2b0c0c;
+  color: #ffffff;
+  box-shadow: 0 0 15px -2px rgba(239, 68, 68, 0.3);
+}
+
+/* Editorial Circle CTA */
+.btn-circle {
+  width: 90px;
+  height: 90px;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #F4F4F0;
+  font-size: 0.68rem;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #111111;
+}
+
+.btn-circle:hover {
+  background: #991B1B;
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 0 20px -3px rgba(153, 27, 27, 0.5);
+}
+
+/* Custom dark scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 89, 0.4);
+}
